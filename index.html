@@ -13,7 +13,10 @@
     <div class="container">
         <!-- Players Information -->
         <div class="player-info-main">
-            <div class="player-info">
+            <div class="flex-center">
+                <h1>N I M</h1>
+            </div>
+            <div class="flex-center">
                 <div class="player-one">
                     <label for="playerOne">Player 1</label>
                     <input type="text" id="playerOne" placeholder="Name" value="A">
@@ -23,9 +26,9 @@
                     <input type="text" id="playerTwo" placeholder="Name" value="B">
                 </div>
             </div>
-            <div id="btnStart">
-                    <button type="submit" onclick="startGame();">Start</button>
-                </div>
+            <div id="btnStart" class="flex-center">
+                <button type="submit" onclick="startGame();">Start</button>
+            </div>
         </div>
         
         <!-- Nim display -->
@@ -36,12 +39,20 @@
         </div>
         <!-- Take Sticks-->
         <div class="stick-button">
-            <h1 class="player-name-display" id="playerNameDisplay"></h1>
-            <p>How many sticks do you want to take?</p>
-            <input type="radio" name="choice" value="1">1
-            <input type="radio" name="choice" value="2">2
-            <input type="radio" name="choice" value="3">3
-            <button type="submit" onclick = "takeSticks();">Take</button>
+            <div>
+                <h2 class="player-name-display" id="playerNameDisplay"></h2>
+            </div>
+            <div>
+                <p>How many sticks do you want to take?</p>
+            </div>
+            <div>
+                <input type="radio" name="choice" value="1">1
+                <input type="radio" name="choice" value="2">2
+                <input type="radio" name="choice" value="3">3
+            </div>
+            <div>
+                <button type="submit" onclick = "takeSticks();">Take</button>
+            </div>
         </div>
     </div>
 
