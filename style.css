@@ -1,0 +1,44 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.player-info-main{
+    background-color: lightblue;
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    font-size: 1rem;
+}
+
+.player-info{
+    display: flex;
+}
+
+.player-info > div{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.game-display{
+    background-color: lightcoral;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 100%;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.stick-button{
+    background-color: lightgreen;
+    width: 100%;
+    height: 75%;
+
+}
