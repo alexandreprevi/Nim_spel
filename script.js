@@ -1,10 +1,12 @@
 const gameDisplay = document.getElementById("sticksDisplay");
 const playerNameDisplay = document.getElementById("playerNameDisplay");
+const choice = document.getElementsByName("choice");
 
 
-let sticksLeft = 21;
+let sticksLeft = 6;
 let sticksToTake;
 let playerTurn = 0;
+let checkWinner = false;
 
 
 function startGame(){
@@ -21,6 +23,7 @@ function getPlayersInfo(){
 }
 
 function displayStick(){
+
     resetSticks();
     
     for(let i = 0; i < sticksLeft; i++){
@@ -29,22 +32,25 @@ function displayStick(){
 }
 
 function takeSticks(){
-    
 
-    const choice = document.getElementsByName("choice");
+    
     for (let i = 0; i < choice.length; i++){
         if (choice[i].checked){
             sticksToTake = choice[i].value;
         }
     }
+
     // update amount of sticks
     sticksLeft -= sticksToTake;
     displayStick();
-    setTimeout(function(){
-        updatePlayer();
-    
-    }, 300);
-    
+    checkforWinner();
+    console.log(checkWinner);
+    if (checkWinner == false){
+        setTimeout(function(){ 
+            updatePlayer();
+        }, 300);
+    }
+   
 }
 
 function resetSticks(){
@@ -61,4 +67,30 @@ function updatePlayer(){
         playerNameDisplay.innerText = `${playerTwo.value}'s turn `;
     }
     playerTurn++;
+}
+
+function checkforWinner(){
+
+    
+    if (sticksLeft == 1){
+        // last player won
+        if (playerTurn % 2 == 0){
+            playerNameDisplay.innerText = "B won";
+        } else{
+            playerNameDisplay.innerText = "A won";
+        }
+        return checkWinner = true;
+        //stop game  
+    }
+
+    if (sticksLeft <= 0){
+        // last player lost
+        //stop game
+        if (playerTurn % 2 == 0){
+            playerNameDisplay.innerText = "A won";    
+        } else{  
+            playerNameDisplay.innerText = "B won";
+        }   
+        return checkWinner = true;
+     }
 }
