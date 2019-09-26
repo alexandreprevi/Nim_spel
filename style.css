@@ -1,44 +1,134 @@
+:root{
+    background-color: rgb(212, 230, 231);
+    font-size: 62.5%;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+h1,
+h2,
+h3,
+h4{
+    margin-bottom: 1rem;
+}
+
+h1{
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+
 .container{
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-
 .player-info-main{
-    background-color: lightblue;
-    justify-content: space-around;
-    display: flex;
     width: 100%;
-    height: 50%;
-    font-size: 1rem;
 }
 
 .player-info{
     display: flex;
-}
-
-.player-info > div{
-    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-around;
     text-align: center;
-    flex-direction: column;
+    padding: 2rem;
+}
+.player-info > div >input{
+    width: 9rem;
     margin: 1rem;
 }
 
-.game-display{
-    background-color: lightcoral;
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 10px;
-    height: 100%;
-    font-size: 5rem;
-    text-align: center;
+.btn-start{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }
 
-.stick-button{
-    background-color: lightgreen;
+.game-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(151, 199, 247);
     width: 100%;
-    height: 75%;
+    margin: 2rem;
+    border: 2px solid rgba(94, 11, 157, 0.4);
+    border-radius: 10px;
+    height: 15rem;
+    font-size: 4.5rem;
+}
 
+.choose-stick{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
+.toHide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.radio-btn{
+    display: flex;
+    width: 20rem;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.radio-btn > input{
+    margin: 0 0.6rem 0 2rem;
+}
+
+/* BUTTONS */
+
+
+.btn{
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    width: 6rem;
+    text-align: center;
+    border: 0.1rem solid rgb(94, 11, 157);
+    border-radius: 2rem;
+    text-decoration: none;
+    color: rgb(94, 11, 157);
+    background-color: white;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(94, 11, 157, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+#gif{
+    padding-bottom: 4rem;
+    
 }

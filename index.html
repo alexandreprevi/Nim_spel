@@ -6,42 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat&display=swap" rel="stylesheet">
     <title>Nim</title>
 </head>
 
 <body>
     <div class="container">
         <!-- Players Information -->
-        <div class="player-info-main">
-            <div class="player-info">
+        <div class="player-info-main" id="inputSection">
+            <h1 style="text-align: center">Nim</h1>
+            <div class="player-info ">
                 <div class="player-one">
                     <label for="playerOne">Player 1</label>
-                    <input type="text" id="playerOne" placeholder="Name" value="A">
+                    <input type="text" id="playerOne" placeholder="Enter name" required>
                 </div>
                 <div class="player-two">
                     <label for="playerTwo">Player 2</label>
-                    <input type="text" id="playerTwo" placeholder="Name" value="B">
+                    <input type="text" id="playerTwo" placeholder="Enter name" required>
                 </div>
             </div>
-            <div id="btnStart">
-                    <button type="submit" onclick="startGame();">Start</button>
-                </div>
+            <div id="btnStart" class="btn-start">
+                <button type="submit" class="btn" onclick="startGame();">Start</button>
+            </div>
         </div>
-        
+
         <!-- Nim display -->
-        <div class="game-display">
+        <div class="game-display" id="gameDisplay">
             <div id="sticksDisplay">
 
             </div>
         </div>
         <!-- Take Sticks-->
-        <div class="stick-button">
+        <div class="choose-stick" id="chooseSticksSection">
             <h1 class="player-name-display" id="playerNameDisplay"></h1>
-            <p>How many sticks do you want to take?</p>
-            <input type="radio" name="choice" value="1">1
-            <input type="radio" name="choice" value="2">2
-            <input type="radio" name="choice" value="3">3
-            <button type="submit" onclick = "takeSticks();">Take</button>
+            <img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" id="gif" alt="gif">
+            <div id="toHide" class="toHide">
+                <h2>How many sticks do you want to take?</h2>
+                <div class="radio-btn">
+                    <input type="radio" name="choice" value="1" checked>1
+                    <input type="radio" name="choice" value="2">2
+                    <input type="radio" name="choice" value="3">3
+                </div>
+                <button type="submit" class="btn" onclick="takeSticks();">Take</button>
+            </div>
+        </div>
+        <div class="restart" id="restartSection">
+            <button type="submit" class="btn" id="restartButton" onclick="restart();">Restart</button>
         </div>
     </div>
 
