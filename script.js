@@ -7,21 +7,44 @@ const restartButton = document.getElementById("restartButton");
 const restartSection = document.getElementById("restartSection");
 const gameDisplaySection = document.getElementById("gameDisplay");
 const gif = document.getElementById("gif");
-
+const takeButton = document.getElementById("takeButton");
 
 let sticksLeft = 21;
 let sticksToTake;
 let playerTurn = 0;
-let checkWinner = false;
+let weHaveAWinner = false;
 
 restartSection.style.display = "none";
 gameDisplaySection.style.display = "none";
 gif.style.display = "none";
 
 
+function checkforWinner(){
+
+    if (sticksLeft == 1){
+        // last player won
+        if (playerTurn % 2 == 0){
+            playerNameDisplay.innerText = playerTwo.value+" won";
+        } else{
+            playerNameDisplay.innerText = playerOne.value+" won";
+        }
+        return weHaveAWinner = true;
+        
+    }
+
+    if (sticksLeft <= 0){
+        // last player lost
+        //stop game
+        if (playerTurn % 2 == 0){
+            playerNameDisplay.innerText = playerOne.value+" won";
+        } else{  
+            playerNameDisplay.innerText = playerTwo.value+" won";
+        }   
+        return weHaveAWinner = true;
+     }
+}
 
 function startGame(){
-    
     
     getPlayersInfo();
     displayGame();
@@ -32,20 +55,25 @@ function startGame(){
 
 function getPlayersInfo(){
     
-    playerOne = document.getElementById("playerOne");
-    playerTwo = document.getElementById("playerTwo");
+    let playerOne = document.getElementById("playerOne");
+    let playerTwo = document.getElementById("playerTwo");
     
+    // if no input by players
     if (playerOne.value == ""){
         playerOne.value = "Player 1";
     }
     if (playerTwo.value == ""){
         playerTwo.value = "Player 2";
     }
-    
+}
+
+function displayGame(){
+    inputSection.style.display = "none";
+    chooseSticksSection.style.display = "flex";
+    gameDisplaySection.style.display = "flex";
 }
 
 function displayStick(){
-
     gameDisplay.innerText = "";
     for(let i = 0; i < sticksLeft; i++){
         gameDisplay.innerText += "|";
@@ -53,8 +81,9 @@ function displayStick(){
 }
 
 function takeSticks(){
-
-    
+    // disable button 
+    takeButton.disabled = true;
+    // get how many sticks the player wants to take
     for (let i = 0; i < choice.length; i++){
         if (choice[i].checked){
             sticksToTake = choice[i].value;
@@ -65,19 +94,20 @@ function takeSticks(){
     sticksLeft -= sticksToTake;
     displayStick();
     checkforWinner();
-    if (checkWinner == false){
+    if (weHaveAWinner == false){
         setTimeout(function(){ 
+
             updatePlayer();
+            takeButton.disabled = false;
+            // reable button
         }, 300);
     }
-    if (checkWinner == true){
+    if (weHaveAWinner == true){
         endOfGameDisplay();
     }
     
    
 }
-
-
 
 function updatePlayer(){
 
@@ -90,37 +120,8 @@ function updatePlayer(){
     playerTurn++;
 }
 
-function checkforWinner(){
 
-    
-    if (sticksLeft == 1){
-        // last player won
-        if (playerTurn % 2 == 0){
-            playerNameDisplay.innerText = playerTwo.value+" won";
-        } else{
-            playerNameDisplay.innerText = playerOne.value+" won";
-        }
-        return checkWinner = true;
-        //stop game  
-    }
 
-    if (sticksLeft <= 0){
-        // last player lost
-        //stop game
-        if (playerTurn % 2 == 0){
-            playerNameDisplay.innerText = playerOne.value+" won";
-        } else{  
-            playerNameDisplay.innerText = playerTwo.value+" won";
-        }   
-        return checkWinner = true;
-     }
-}
-
-function displayGame(){
-    chooseSticksSection.style.display = "flex";
-    inputSection.style.display = "none";
-    gameDisplaySection.style.display = "flex";
-}
 
 function restart(){
     location.reload();

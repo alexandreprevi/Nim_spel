@@ -30,8 +30,6 @@ h2{
     font-weight: 700;
 }
 
-
-
 .container{
     max-width: 60vw;    
     height: 100vh;
@@ -81,11 +79,11 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(151, 199, 247);
+    background-color: rgb(176, 211, 213);
     width: 100%;
     max-width: 400px;
     margin: 2rem;
-    border: 2px solid rgba(94, 11, 157, 0.4);
+    border: 2px solid rgba(44, 27, 233, 0.4);
     border-radius: 10px;
     height: 15rem;
     font-size: 4.5rem;
@@ -135,10 +133,11 @@ h2{
     padding: 1rem 0;
     width: 6rem;
     text-align: center;
-    border: 0.1rem solid rgb(94, 11, 157);
+    border: 0.1rem solid #00B4F1;
     border-radius: 2rem;
     text-decoration: none;
-    color: rgb(94, 11, 157);
+    color: #00B4F1;
+    font-weight: bold;
     background-color: white;
 }
 
@@ -225,4 +224,12 @@ div.foo{
     rotateY(40deg)
     rotateZ(0deg)
     skew(0deg,22deg);
+}
+
+@media screen and (max-width: 350px){
+    .letter{
+        font-weight: 900;
+        font-size: 5em;
+       
+      }
 }
