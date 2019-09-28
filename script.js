@@ -76,8 +76,7 @@ function displayStick(){
     // Print an stick-image per stickLeft
     for (let i = 0; i < sticksLeft; i++) {
         imagen = document.createElement("img");
-        // Image upploaded 28-Sep-2019. Will be erased 28-Oct-2019 
-        imagen.src = "https://i.postimg.cc/pT64R0yB/pinne.png";
+        imagen.src = "bilder/pinne.png";
         gameDisplay.appendChild(imagen);
     }
 }
