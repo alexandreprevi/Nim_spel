@@ -8,6 +8,8 @@ const restartSection = document.getElementById("restartSection");
 const gameDisplaySection = document.getElementById("gameDisplay");
 const gif = document.getElementById("gif");
 const takeButton = document.getElementById("takeButton");
+const radio2 = document.getElementById("radio-2");
+const radio3 = document.getElementById("radio-3");
 
 let sticksLeft = 21;
 let sticksToTake;
@@ -58,6 +60,15 @@ function displayGame(){
     gameDisplaySection.style.display = "flex";
 }
 
+function disableRadios() {
+    if (sticksLeft == 2)
+        radio3.style.display = "none";
+    if (sticksLeft == 1) {
+        radio3.style.display = "none";
+        radio2.style.display = "none";
+    }
+}
+
 function displayStick(){
     let imagen;
     // Clear the display each time before printing the sticks
@@ -84,6 +95,7 @@ function takeSticks(){
     // update amount of sticks
     sticksLeft -= sticksToTake;
     displayStick();
+    disableRadios();
     checkforWinner();
     if (weHaveAWinner == false){
         setTimeout(function(){ 

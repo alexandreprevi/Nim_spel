@@ -52,9 +52,18 @@
             <div id="toHide" class="toHide">
                 <h2>How many sticks do you want to take?</h2>
                 <div class="radio-btn">
-                    <input type="radio" name="choice" value="1" checked>1
-                    <input type="radio" name="choice" value="2">2
-                    <input type="radio" name="choice" value="3">3
+                    <span id="radio-1">
+                        <input type="radio" id="r1" name="choice" value="1" checked>
+                        <label for="r1">1</label>
+                    </span>
+                    <span id="radio-2">
+                        <input type="radio" id="r2" name="choice" value="2">
+                        <label for="r2">2</label>
+                    </span>
+                    <span id="radio-3">
+                        <input type="radio" id="r3" name="choice" value="3">
+                        <label for="r3">3</label>
+                    </span>
                 </div>
                 <button type="submit" class="btn" id="takeButton" onclick="takeSticks();">Take</button>
             </div>

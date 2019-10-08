@@ -120,8 +120,8 @@ h2{
     font-size: 2rem;
 }
 
-.radio-btn > input{
-    margin: 0 0.6rem 0 2rem;
+.radio-btn > span{
+    margin: 0 1rem;
 }
 
 /* BUTTONS */
