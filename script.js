@@ -20,16 +20,6 @@ gif.style.display = "none";
 
 
 function checkforWinner(){
-    if (sticksLeft == 1){
-        // last player won
-        if (playerTurn % 2 == 0){
-            playerNameDisplay.innerText = playerTwo.value+" won";
-        } else{
-            playerNameDisplay.innerText = playerOne.value+" won";
-        }
-        return weHaveAWinner = true;        
-    }
-
     if (sticksLeft <= 0){
         // last player lost
         // stop game
